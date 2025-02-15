@@ -1,1 +1,27 @@
-<p>navbar works!</p>
+<div class="card">
+    <p-toolbar>
+        <ng-template pTemplate="start">
+            <p-button (click)="visible = true" icon="pi pi-bars" class="mr-2" text severity="secondary"></p-button>
+            <p-button icon="pi pi-print" class="mr-2" text severity="secondary"></p-button>
+            <p-button icon="pi pi-upload" text severity="secondary"></p-button>
+        </ng-template>
+
+        <ng-template pTemplate="center">
+            <p-iconfield iconPosition="left">
+                <p-inputicon class="pi pi-search"></p-inputicon>
+                <input type="text" pInputText placeholder="Search" />
+            </p-iconfield>
+        </ng-template>
+
+        <ng-template pTemplate="end">
+            <p-splitbutton label="Get-In" [model]="items"></p-splitbutton>
+        </ng-template>
+    </p-toolbar>
+    <p-drawer [(visible)]="visible" header="MENU">
+        <h3>Rxjs</h3>
+        <h3>Bootstrap</h3>
+        <h3>EventBinding</h3>
+        <h3>Two way binding</h3>
+        <h3>Animation</h3>
+    </p-drawer>
+</div>
