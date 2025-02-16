@@ -1,0 +1,96 @@
+Component.ts 
+import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [NavbarComponent, FooterComponent, CommonModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
+})
+export class HomeComponent {
+
+  //Dynamic interpolation 
+  //String with interpolation
+  textValue:string = "Hello World! ";
+
+  //Turnary operator with interpolation
+  isVisible:boolean = false;
+
+   //Method with interpolation
+  getTextValue(){
+    const a = 1 + 6;
+    return this.textValue + a + " Numbers";
+
+    
+  }
+  weight:Number = 51.2;
+  age:number = 23;
+
+  address = {
+    street: "Dunbar Road",
+    city: "Hatton",
+    state: "Central"
+  }
+
+  fruits:string[] = ["Apple","Orange","Banana"];
+
+  isNull = null;
+  isUndefined = undefined;
+
+  //Optional chaining
+  user:{name?:string,address?:{city:string}}={
+    name: "Nirosh", //It can be null
+    address:undefined
+
+  }
+
+  student?:{name:string,sex?:{gender:string}}={
+    name:"Nivehan",
+    sex: undefined
+  }//Non nullish Assertion
+
+
+  //Template reference with interpolation -> #tempRef
+
+}
+
+********************************************
+********************************************
+component.html
+********************************************
+********************************************
+
+
+<app-navbar />
+<app-footer />
+<button> HOME </button>
+<p>This is Home Component</p>  
+<p>{{textValue}}</p>  
+<p>{{getTextValue()}}</p> 
+
+<input type="text" #tempRef (input)="0" id="" />
+<p>{{tempRef.value}}</p>  
+
+<p>{{isVisible?'Nivethan':'Rajendran'}}</p> 
+
+<p>{{isVisible}}</p>
+
+<P>{{weight}}Kg</P>
+<p>{{age}}</p>
+
+<p>{{address.city}}</p>
+<p>{{fruits}}</p>
+
+<p>{{isNull}}</p>
+<p>{{isUndefined}}</p>
+
+<p>{{"nivethan" | uppercase}} <- this a Pipe</p>
+
+<p>{{user.address?.city}}</p>
+
+<p>{{student!.name}}</p>
+<p>{{student!.sex}}</p>
