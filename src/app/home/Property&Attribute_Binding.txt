@@ -1,0 +1,57 @@
+********************************************
+********************************************
+home.component.ts
+********************************************
+********************************************
+
+
+import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [NavbarComponent, FooterComponent, CommonModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
+})
+export class HomeComponent {
+
+Image1:String = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcCBAUBAwj/xAAwEAACAQMCBAQEBgMAAAAAAAAAAQIDBBEFIQYSMUETIlFxByORsRQyUmHB0RdCgf/EABoBAQEAAwEBAAAAAAAAAAAAAAAEAQMFAgb/xAAkEQEAAgEEAQMFAAAAAAAAAAAAAQIDBBESITEzQVEFExQiMv/aAAwDAQACEQMRAD8AvEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPMnpjJ4TbA9ckupG9U460HTq7tvxTublZzSt1ztY9X0X1OHxJdajxLcT0/SriFCwh5atRxy6j9Pb7lecR8P3elVnTuKkpptSpuEVhr+DTfLMeHY0v02t/Vt38e6y/8m6XGT57G9jFf7Yi/wCTJfEPTK+s2NpQqUqdCrFyuKt3PwnT/TFesm8bem5TtGrcKb8SDq8sebCeWzv6Nb6RdWnNqVzbxUKOZuc1zVKzW79sv/rJ41N4/qGbaLFy48Zhe8KkakVKElKLWU085Mz896NxTfcK6hGWnXDuNP5vm2jfkkvWOV5X7F7aPqdrrGn0L6xqc9GrHKfdPun6NFlbRaEGq0ttPbae4bwAPSUAAAAAAAAAAAAADl8SXLtdIuJxeJOLSZ1CP8ZLn07w+0s5PNp2hv0tYtmrE/Ll8FwhHTFzJKTb3/YifHFeMtQrOnPxFtGMM7LHUwttdlZwVtFyjKKxhd+pFdW1WdxPK2by9uxBlyb1isPqceltjz2zW92nVnTpuXLFRlKON92l1OZOUsOGFg26sVWqSWMY6Z7nxq0mupijXqMtpl8Ipye7Ld+EeoSpudhJvw6i5op9pL0KmpQ3eSffDyp4erWizv4iRTjntytTHKna7AAUuQAAAAAAAAAAAAABxeKKbnY5XZnaNXUbf8Ta1KeN2tvc82jeNm3DfhkiylNWp4rTljrnJG7ik+ZuPcmuu2sqdecZrDzgjFSmudkHHt9fbLyrDSpwziTWG9j51IZ2aN+pTjFOPdPOx8JQ3eRCG/bTVLDJh8O14vEFpBdedPHsm39iKVpKnv8AcnfwetlPULrUa21KjHw6bfeb6/Rfc3453lHqv1xyuAHyVenLpIzUk+jKnFZAZAAAAAAAAAAAADxnoAjXEvDy1CLrW6+cusfUrTU9HrW1V88HHDecrBeBpanp1DUKEqVaPXpJdUab4ot4dDTa++KOFu4UZWtW4xk0/Tb9jXr20obzWEkT/VOEbujKToXE+TqlhEeu9BuOb58pz9yb7Ft/Kz87HPiEO/C1b2tiPlp53n/RLdHvpabb07a28lKHSK+rfuYLTXT25WZq1cez+hVjpFYc/NmtlntJ9P4im8KbJFZ6tGoluVzClOP5UzpWFWvCaWHg2JphZVC6Uktzbp1OYjWlyqTjFskFvF9zLw2QAAAAAAAAAAAAAAAYyipLD3RqV9OoVs5ijdAZ3cKtoFGT2gasuHaX6UScYGzPKUXjw9TXSKPtS0OEX+VEhwvQ9DG7St7KNKK2NyKSWx6AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9k=';
+isDisable: boolean = false;
+isChecked:boolean = true;
+homeTitle: string = 'This is the home component';
+newName: string = 'This is the new name';
+
+label: string = 'This is paragraph';
+nameL: string = 'This is second paragraph';
+
+getName(){
+  return this.newName;
+}
+}
+
+********************************************
+********************************************
+home.component.html
+********************************************
+********************************************
+
+<app-navbar />
+<app-footer />
+<button> HOME </button>
+<br>
+<img src="data:image/jpeg;base64,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" alt="Apple">
+<br>
+<img [src]="Image1" alt="Applee">
+<input type="text" [disabled] ="isDisable" id="">
+<input type="checkbox" [checked]="isChecked" id="">
+
+<p title="homeTitle">Home</p>
+<p title="Hii,  {{newName}}">New</p>
+<p title="Hello, {{getName()}}">Next</p>
+----------------------------------------
+<p [attr.aria-lable]="label">This is paragraph</p>
+<p [attr.name] = "nameL">This is the second paragraph</p>
