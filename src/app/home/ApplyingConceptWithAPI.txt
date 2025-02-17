@@ -1,3 +1,25 @@
+********************************************
+********************************************
+home.component.html
+********************************************
+********************************************
+
+<app-navbar />
+<!-- <app-footer /> -->
+<button> HOME </button>
+
+@for(fruit of fruitData; track fruit.id){
+    <p [attr.role]="fruit.name" title="{{fruit.name}}">{{fruit.name}}</p>
+    <img [src]="fruit.image" alt="">
+    <p>{{fruit.price}}</p>
+}
+
+********************************************
+********************************************
+home.component.ts
+********************************************
+********************************************
+
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
