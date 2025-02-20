@@ -3,6 +3,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { CommonService } from '../common.service';
+import { EventComponent } from '../event/event.component';
 
 @Component({
   selector: 'app-home',

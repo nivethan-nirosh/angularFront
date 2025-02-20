@@ -8,6 +8,8 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { DrawerModule } from 'primeng/drawer';
 import { MenuItem } from 'primeng/api';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -20,10 +22,11 @@ import { MenuItem } from 'primeng/api';
     InputTextModule,
     IconFieldModule,
     InputIconModule,
-    DrawerModule
+    DrawerModule,
+    RouterLink
   ],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'] // ✅ Corrected from "styleUrl"
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
   items: MenuItem[] = [];
@@ -31,8 +34,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'Update', icon: 'pi pi-refresh' },
-      { label: 'Delete', icon: 'pi pi-times' }
+      { label: 'Sign-Up', icon: 'pi pi-refresh' },
+      { label: 'Log-In', icon: 'pi pi-times' }
     ];
   }
 }

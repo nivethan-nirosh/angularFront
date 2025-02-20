@@ -1,0 +1,16 @@
+<p>Event Component</p>
+<button (dblclick)="onClick()">Click Me</button>
+<button (mouseenter)="press('Hiii Nirosh')">Press</button>
+<button (click)="evt($event)">Event</button><br>
+<input type="text" (keyup)="keyUp($event)"><br><hr>
+<input type="text" (keyup.t)="keyUp1($event)"><br><hr>
+<input type="date" (change)="onSelectDate($event)"><hr>
+<input type="text" (focus)="onFocus()"><hr>
+<input type="text" (blur)="onBlur()"><hr>
+Combined Events<br>
+<input type="text" #myInpt placeholder="Combined">
+<button (click)="buttonClick(myInpt.value)">Reference</button>
+<hr>
+@for(fruit of fruitData; track fruit.id){
+    <button (click)="fruitClick(fruit.name)">{{fruit.name}}</button>
+}
