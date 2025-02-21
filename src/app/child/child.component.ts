@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INameObject } from '../common.model';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-child',
-  imports: [],
+  imports: [ButtonModule],
   standalone: true,
   templateUrl: './child.component.html',
   styleUrl: './child.component.scss'
@@ -27,6 +28,28 @@ export class ChildComponent {
   @Input({transform: (val: number) => val * 2}) weight!: number;
 
   @Input({transform: transformValue}) complexObj!: INameObject[];
+
+
+
+//**************************************************************/
+//**************************************************************/
+//**************************************************************/
+//**************************************************************/
+//**************************************************************/
+//**************************************************************/
+
+// msg: string = 'Hello from child daa';
+msg: string[] = ['Nirosh','Nivethan','Niral'];
+@Output("valChild") valFromChild = new EventEmitter<string[]>();
+
+sayParent(){
+  //console.log(msg);
+  this.valFromChild.emit(this.msg);
+}
+
+
+
+
 
 }
 function transformValue(value: INameObject[]): INameObject[] {

@@ -1,7 +1,9 @@
 <div style="text-align: center;">
     <p>parent works!</p>
+    <p>{{dataFromChild}}</p>
 </div>
 
 <div style="text-align: center; border:2px solid rgb(16, 78, 16)">
-    <app-child [value]="numArr" [std]="studentObj"  [age]="50" [weight]="30" [complexObj]="numArr"  ></app-child>
+    //Alias is used to pass the value from parent to child
+    <app-child (valChild)="valueFromChild($event)" [value]="numArr" [std]="studentObj"  [age]="50" [weight]="30" [complexObj]="numArr"  ></app-child>
 </div>

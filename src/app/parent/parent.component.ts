@@ -32,5 +32,11 @@ export class ParentComponent {
     name: 'Hexohen',
     value: 55
   }
+  dataFromChild!: string[]
+
+  valueFromChild(msg: string[]){
+    console.log(msg);
+    this.dataFromChild = msg;
+  }
 
 }
