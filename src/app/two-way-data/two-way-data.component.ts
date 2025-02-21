@@ -21,7 +21,6 @@ interface City {
 })
 export class TwoWayDataComponent implements OnInit {
   ngOnInit() {
-    this.date = new Date();
     
     this.cities = [
         { name: 'New York', code: 'NY' },
@@ -30,12 +29,16 @@ export class TwoWayDataComponent implements OnInit {
         { name: 'Istanbul', code: 'IST' },
         { name: 'Paris', code: 'PRS' }
     ];
+
+    this.formGroup = new FormGroup({
+      date: new FormControl<Date | null>(null)
+  });
     
 }
 
 
   checked: boolean = false;
-  date: Date | undefined;
+  date: Date = new Date();
   value: string = '';
   ingredient!: string;
   formGroup!: FormGroup;
