@@ -15,4 +15,7 @@ export class ControlFlowComponent {
     }
   }
 
+  age: number = 56;
+  num: number = 10;
+
 }

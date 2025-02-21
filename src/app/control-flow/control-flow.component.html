@@ -7,3 +7,31 @@
 @else {
     <p>Bye</p>
 }
+<hr>
+@switch (age) {
+    @case (16) {
+        <p>Age is 16</p>
+    }
+    @case (23) {
+        <p>Age is 23</p>
+    }
+    @case (56) {
+        <p>Age is 56</p>
+    }
+    @default {
+        <p>Age is not 16, 23 or 56</p>
+    }
+
+}
+<hr>
+@switch(true) {
+    @case (num > 16) {
+        <p>Age is greater than 16</p>
+    }
+    @case (num < 16) {
+        <p>Age is less than 16</p>
+    }
+    @default {
+        <p>Age is 16</p>
+    }
+}
