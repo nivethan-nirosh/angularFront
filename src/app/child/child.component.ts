@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 import { INameObject } from '../common.model';
 import { ButtonModule } from 'primeng/button';
 
@@ -46,9 +46,15 @@ sayParent(){
   //console.log(msg);
   this.valFromChild.emit(this.msg);
 }
+//@Output("valChild") valFromChild = new EventEmitter<string[]>(); --> Same as below
+sendDataToPrent = output<string>();
+
+informParent(message: string){
+  console.log(message);
+  this.sendDataToPrent.emit(message);
 
 
-
+}
 
 
 }

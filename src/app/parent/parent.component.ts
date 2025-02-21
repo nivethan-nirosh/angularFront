@@ -39,4 +39,10 @@ export class ParentComponent {
     this.dataFromChild = msg;
   }
 
+  dataFromChild2!: string
+
+  informParent(message: string){
+    this.dataFromChild2 = message;
+  }
+
 }
