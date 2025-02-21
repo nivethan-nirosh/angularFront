@@ -24,7 +24,17 @@ export class ChildComponent {
     return this.initialValue;
   }
 
+  @Input({transform: (val: number) => val * 2}) weight!: number;
 
+  @Input({transform: transformValue}) complexObj!: INameObject[];
 
+}
+function transformValue(value: INameObject[]): INameObject[] {
 
+  return value.map((item) => {
+    return {
+      ...item,
+      val : item.value*2
+    }
+  })
 }
