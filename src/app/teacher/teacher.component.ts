@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { StudentComponent } from '../student/student.component';
 
 @Component({
@@ -11,6 +11,8 @@ export class TeacherComponent {
   @ViewChild('teacherRef') teacherRefCom: ElementRef | undefined
   @ViewChild('teacherInput') teacherInpCom!: ElementRef
   @ViewChild('teacherCheck') teacherChkIn: ElementRef | undefined
+  //Have a Look on it
+  @ViewChildren('teacherButton') teacherButtonCom : QueryList<ElementRef> | undefined
 
   //Life cycle hook
   ngAfterViewInit(){
@@ -22,6 +24,10 @@ export class TeacherComponent {
     console.log(this.teacherInpCom?.nativeElement.value);
 
     this.teacherChkIn!.nativeElement.checked = true;
+
+    this.teacherButtonCom!.forEach((item) => {
+      console.log(item.nativeElement.textContent);
+    })
 
   }
 

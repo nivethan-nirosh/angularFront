@@ -2,5 +2,8 @@
 <input #teacherInput type="text" placeholder="Enter Name">
 <hr>
 Alive : <input #teacherCheck type="checkbox">
+@for(item of [1,2,3,4,5,6]; track item){
+    <button #teacherButton (click)="0">Button {{item}}</button>
+}
 <hr>
 <app-student></app-student>
