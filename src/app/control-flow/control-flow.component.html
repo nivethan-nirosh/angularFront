@@ -35,3 +35,18 @@
         <p>Age is 16</p>
     }
 }
+
+<hr>
+<!-- <p *ngFor="let fruit of fruitDetails; trackBy: trackByFn ">{{fruit.name}}</p> -->
+ @for(fruit of fruitDetails; track fruit.id; let cout = $count; let indx = $index;
+ let first = $first; let even = $even){
+    <p>{{indx+1}} - {{fruit.name}} , isFirst:{{first}} ,,, isEven: {{even}}</p>
+    <p>{{fruit.price}}</p>
+    <p>{{"Total count is :"+cout}}</p>
+}@empty {
+    <p>No fruits here</p>
+    
+}
+
+<p-button  (click)="showData()">Add Fruit</p-button>
+<p-button (click)="remove()">Remove Fruits</p-button>

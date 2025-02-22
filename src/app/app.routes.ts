@@ -4,11 +4,15 @@ import { EventComponent } from './event/event.component';
 import { TwoWayDataComponent } from './two-way-data/two-way-data.component';
 import { ParentComponent } from './parent/parent.component';
 import { ControlFlowComponent } from './control-flow/control-flow.component';
+import { ContentParentComponent } from './content-parent/content-parent.component';
+import { ContentChildComponent } from './content-child/content-child.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'event', component: EventComponent},
     {path: 'two-way-data', component: TwoWayDataComponent},
     {path: 'parent', component: ParentComponent},
-    {path: 'control', component: ControlFlowComponent}
+    {path: 'control', component: ControlFlowComponent},
+    {path: 'content-parent', component: ContentParentComponent},
+    {path: 'content-child', component: ContentChildComponent}
 ];

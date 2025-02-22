@@ -1,0 +1,22 @@
+<p>content-parent works!</p>
+<input type="text" #myInp (input)="1" >
+<hr>
+<app-content-child>
+    <div>
+        <p> This is the Content From Parent </p>
+    </div>
+    Good Morning
+    <hr>
+    <div>
+        <p> {{myInp.value}} </p>
+    </div>
+    <hr>
+    <div head-cont>
+        <h1 >Header</h1>
+    </div>
+    
+    <div body-cont>
+        <h2>Body </h2>
+    </div>
+    
+</app-content-child>
