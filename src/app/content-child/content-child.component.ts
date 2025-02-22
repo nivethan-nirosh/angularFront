@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ContentChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-content-child',
@@ -8,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './content-child.component.scss'
 })
 export class ContentChildComponent {
+  @ContentChild('valueFromParent') valueFromParent: ElementRef | undefined;
+
+  ngAfterContentInit(){
+    console.log(this.valueFromParent?.nativeElement.textContent)
+  }
+
+  ngAfterContentChecked(){
+    console.log(this.valueFromParent?.nativeElement.textContent)
+
+  }
 
 }
