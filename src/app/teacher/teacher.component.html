@@ -6,4 +6,12 @@ Alive : <input #teacherCheck type="checkbox">
     <button #teacherButton (click)="0">Button {{item}}</button>
 }
 <hr>
+
+<input type="text" pInputText #primeInput />
+
+
 <app-student></app-student>
+
+@for(stuItem of [6,7,8,9]; track stuItem){
+    <app-student [stuItem]="stuItem"></app-student>
+}
