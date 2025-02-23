@@ -4,7 +4,8 @@ import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-control-flow',
-  imports: [ButtonModule, NgFor],
+  imports: [ButtonModule],
+  //NgFor in imports
   templateUrl: './control-flow.component.html',
   styleUrl: './control-flow.component.scss'
 })
