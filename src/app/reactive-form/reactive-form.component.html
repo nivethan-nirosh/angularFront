@@ -1,1 +1,16 @@
 <p>reactive-form works!</p>
+<label for="firstname">First Name: </label>
+<input 
+[formControl]="reactiveForm" 
+id="firstname"
+type="text"
+(focus)="onFocus()">
+<button (click)="updateValue()">Change</button>
+<p>{{reactiveForm.value}}</p>
+<hr>
+<p>Untouched: {{reactiveForm.untouched}}</p>
+<p>Touched: {{reactiveForm.touched}}</p>
+<p>Pristine :{{reactiveForm.pristine}}</p>
+<p>Dirty: {{reactiveForm.dirty}}</p>
+<p>Valid: {{reactiveForm.valid}}</p>
+<p>invalid: {{reactiveForm.invalid}}</p>
