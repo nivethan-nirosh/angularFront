@@ -28,7 +28,7 @@ export class DatatableComponent {
     this.apiService.getPerson().subscribe({
       next: (result: any) => {
         console.log('Person : ', result);
-        this.person = result;
+        this.person = this.apiService.addHashtagToDoor(result);
       },
       error: (err) => {
         console.error('Error fetching person data', err);

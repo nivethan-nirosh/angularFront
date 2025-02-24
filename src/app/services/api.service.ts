@@ -15,4 +15,12 @@ export class ApiService {
   getPerson(){
     return this.http.get('http://localhost:8080/api/person');
   }
+
+  addHashtagToDoor(arr: any){
+    return arr.map((obj: any) => ({
+      ...obj,
+      doorNo: `#${obj.doorNo}`
+    })
+    )
+  }
 }
