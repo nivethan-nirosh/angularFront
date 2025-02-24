@@ -13,6 +13,8 @@ export class DatatableComponent {
   constructor(private apiService: ApiService) {
   }
   person: IPersonObject[] = []
+
+
   ngOnInit() {
     this.apiService.getTodos().subscribe({
       next: (data) => {
@@ -34,6 +36,10 @@ export class DatatableComponent {
         console.error('Error fetching person data', err);
       }
     });
+  }
+
+  ngOnDestroy(){
+    return this.apiService.transferData.update((value: any) => value.concat(this.person))
   }
 
 
