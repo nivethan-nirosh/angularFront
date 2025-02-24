@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
+import { IPersonObject } from '../common.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  transferData = signal([]);
+  transferData = signal<IPersonObject[]>([]);
 
   constructor(private http: HttpClient) { }
 
@@ -15,11 +16,11 @@ export class ApiService {
   }
 
   getPerson(){
-    return this.http.get('http://localhost:8080/api/person');
+    return this.http.get<IPersonObject[]>('http://localhost:8080/api/person');
   }
 
-  addHashtagToDoor(arr: any){
-    return arr.map((obj: any) => ({
+  addHashtagToDoor(arr: IPersonObject[]){
+    return arr.map((obj: IPersonObject) => ({
       ...obj,
       doorNo: `#${obj.doorNo}`
     })

@@ -28,7 +28,7 @@ export class DatatableComponent {
 
   getAddressFromApiService() {
     this.apiService.getPerson().subscribe({
-      next: (result: any) => {
+      next: (result: IPersonObject[]) => {
         console.log('Person : ', result);
         this.person = this.apiService.addHashtagToDoor(result);
       },

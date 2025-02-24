@@ -9,5 +9,5 @@ export interface IPersonObject{
     name: string
     street: string
     postCode: number
-    doorNo: number
+    doorNo: number | string
 }
