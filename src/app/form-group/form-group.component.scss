@@ -1,0 +1,62 @@
+//Centering the form in the voew port
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+/* Styling the each group*/
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 300px;
+}
+/**/
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+//Error Message
+.p-error{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+//Add some padding and Styling
+input[pInputText],
+textarea[pInputTextarea],
+p-inputnumber,
+p-inputcheckbox{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 14px;
+}
+//Allow vertical resize only
+textarea[pInputTextarea]{
+    resize: vertical;
+}
+
+//Space above the Check box
+p-checkbox{
+    margin-top: 5px;
+}
+
+// For better focus status
+input:focus,
+textarea:focus,
+p-inputnumber:focus-within{
+    border-color: aqua;
+    box-shadow: 0 0 5px #2c626f;
+    outline: none;
+
+
+}
+
+
+
