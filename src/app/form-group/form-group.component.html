@@ -1,40 +1,62 @@
 <div class="form-container">
 
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-<p>Registration Form</p>
+        <p>Registration Form</p>
+
+        <div class="form-group">
+            <label for="username">Username : </label>
+            <input formControlName="username" pInputText id="username" aria-describedby="username-help" />
+            <div
+                *ngIf="registerForm.get('username')?.errors && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+                <span *ngIf="registerForm.get('username')?.hasError('required')" class="p-error">Username is
+                    required.</span>
+                <span *ngIf="registerForm.get('username')?.hasError('pattern')" class="p-error">Username must be 3-15
+                    characters (letters, numbers, _, -).</span>
+            </div>
+
+            <!--
+            @if(registerForm.get('username')?.touched){
+                @if(registerForm.get('username')?.hasError('required','pattern')){
+                    <small class="p-error"> Enter a valid username </small>
+                }
+            }-->
+
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description : </label>
+            <textarea formControlName="description" pTextarea id="description" rows="5" cols="30" style="resize: none"
+                maxlength="110"></textarea>
+            <small>Letter count : {{registerForm.get('description')?.value.length}}</small>
+            @if(registerForm.get('description')?.hasError('maxlength'))
+            {
+            <small class="p-error">Comment must be at most 100 letters</small>
+
+            }
+            <!--<span *ngIf="registerForm.get('description')?.hasError('maxLength')" class="p-error">Comment under 100 letter</span>-->
 
 
-<div class="form-group">
-    <label for="username">Username : </label>
-    <input formControlName="username"
-    pInputText id="username" aria-describedby="username-help" />
-</div>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneno">Phone No : </label>
+            <p-inputnumber inputId="phone" formControlName="phoneno" mode="decimal" [useGrouping]="false" maxlength="10" />
+            @if(registerForm.get('phoneno')?.hasError('pattern')){
+                <span class="p-error"> Enter a valid phone number</span>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="term">Terms ? : </label>
+            <p-checkbox [binary]="true" formControlName="term" />
+            <span> * I accept terms and conditions</span>
+        </div>
+
+        <div class="form-group">
+            <button pButton type="submit" [disabled]="!registerForm.valid">Submit</button>
+        </div>
 
 
-<div class="form-group">
-    <label for="description">Description : </label>
-    <textarea formControlName="description"
-    pTextarea id="description" rows="5" cols="30" style="resize: none"></textarea>
-</div>
-
-
-<div class="form-group">
-    <label for="phoneno">Phone No : </label>
-    <p-inputnumber inputId="phone" formControlName="phoneno" />
-</div>
-
-
-<div class="form-group">
-    <label for="term">Terms ? : </label>
-    <p-checkbox formArrayName="term" [binary]="true" formControlName="term" />
-</div>
-
-
-<div class="form-group">
-    <button pButton type="submit" >Submit</button>
-</div>
-
-
-</form>
+    </form>
 </div>
