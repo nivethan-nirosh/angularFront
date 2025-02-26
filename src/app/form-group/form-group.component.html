@@ -1,3 +1,7 @@
+@let touched = registerForm.get('username')?.touched;
+@let userRegister = registerForm.get('username');
+@let errorMessage = getValidateUserError(userRegister);
+
 <div class="form-container">
 
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -7,21 +11,39 @@
         <div class="form-group">
             <label for="username">Username : </label>
             <input formControlName="username" pInputText id="username" aria-describedby="username-help" />
-            <div
-                *ngIf="registerForm.get('username')?.errors && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
-                <span *ngIf="registerForm.get('username')?.hasError('required')" class="p-error">Username is
-                    required.</span>
-                <span *ngIf="registerForm.get('username')?.hasError('pattern')" class="p-error">Username must be 3-15
-                    characters (letters, numbers, _, -).</span>
-            </div>
+            @if(touched && errorMessage){
+                <small class="p-error"> {{errorMessage}} </small>
+            }
 
             <!--
-            @if(registerForm.get('username')?.touched){
-                @if(registerForm.get('username')?.hasError('required','pattern')){
+            @if(touched){
+                @if(userRegister?.hasError('required')){
                     <small class="p-error"> Enter a valid username </small>
                 }
-            }-->
+                @else if (userRegister?.hasError('pattern')) {
+                    <small class="p-error"> Enter Valid characters </small>
+                }
+                @else if (userRegister?.hasError('maxlenght')){
+                    <small class="p-error"> Name length is exceeds </small>
+                }
+                @else if (userRegister?.hasError('minlenght')){
+                    <small class="p-error"> Minimum Lenght is 6 </small>
+                }
 
+            }
+            -->
+                <!--
+                 <div
+                    *ngIf="registerForm.get('username')?.errors && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+                    <span *ngIf="registerForm.get('username')?.hasError('required')" class="p-error">Username is
+                        required.</span>
+                    <span *ngIf="registerForm.get('username')?.hasError('pattern')" class="p-error">Username must be 3-15
+                        characters (letters, numbers, _, -).</span>
+                </div>
+    
+                -->
+
+           
         </div>
 
         <div class="form-group">

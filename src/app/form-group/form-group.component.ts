@@ -60,4 +60,23 @@ export class FormGroupComponent {
     console.log(this.registerForm.value)
   }
 
+  getValidateUserError(userRegister: any){
+    if(userRegister?.hasError('required')){
+      return 'Enter a valid username';
+    }
+    else if(userRegister?.hasError('pattern')){
+      return 'Enter Valid characters';
+    }
+    else if(userRegister?.hasError('maxlenght')){
+      return 'Name length is exceeds';
+    }
+    else if(userRegister?.hasError('minlenght')){
+      return ' Minimum Lenght is 6 ';
+    }
+    else{
+      return '';
+    }
+
+  }
+
 }
