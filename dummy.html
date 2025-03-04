@@ -1,0 +1,58 @@
+<!-- menubar.component.html -->
+<div class="menubar">
+    <!-- Left Section -->
+    <div class="brand-section">
+        <div class="brand-wrapper">
+            <img src="assets/icons/logo.png" alt="MPMA Logo" class="logo"/>
+            <div class="brand-name">
+                <span class="acronym">MPMA</span><br>
+                <span class="full-name">Mahapola Ports & Maritime Academy</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Section -->
+    <div class="utility-section">
+        <div class="search-container" [class.expanded]="searchExpanded">
+            <i class="pi pi-search" (click)="toggleSearch()"></i>
+            <input type="text" placeholder="Search..." [style.width.px]="searchExpanded ? 200 : 0">
+        </div>
+        
+        <div class="quick-actions">
+            <div class="action-item" (click)="toggleQuickMenu()">
+                <i class="pi pi-plus"></i>
+                <div class="quick-menu" [class.active]="showQuickMenu">
+                    <div class="menu-item"><i class="pi pi-file"></i> New Document</div>
+                    <div class="menu-item"><i class="pi pi-users"></i> Add Student</div>
+                    <div class="menu-item"><i class="pi pi-calendar-plus"></i> Create Event</div>
+                </div>
+            </div>
+            <div class="action-item" (click)="toggleNotifications()">
+                <i class="pi pi-bell"></i>
+                <span class="badge">7</span>
+                <div class="notification-panel" [class.active]="showNotifications">
+                    <div class="notification-header">Notifications</div>
+                    <div class="notification-item">System update available</div>
+                    <div class="notification-item">Pending approvals (3)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="user-section">
+        <div class="user-profile" (click)="toggleProfileMenu()">
+            <div class="avatar">SH</div>
+            <div class="user-info">
+                <span class="name">Steevan Hawking</span>
+                <span class="role">Admin</span>
+            </div>
+            <div class="profile-menu" [class.active]="showProfileMenu">
+                <div class="menu-item"><i class="pi pi-user"></i> Profile</div>
+                <div class="menu-item"><i class="pi pi-cog"></i> Settings</div>
+                <div class="menu-divider"></div>
+                <div class="menu-item"><i class="pi pi-sign-out"></i> Logout</div>
+            </div>
+        </div>
+    </div>
+</div>
