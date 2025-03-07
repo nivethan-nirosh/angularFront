@@ -56,3 +56,8 @@
         </div>
     </div>
 </div>
+<div *ngIf="currentStep === 'new-user'" class="message-section">
+    <h3>Welcome New User!</h3>
+    <p>You're new to MPMA. Let's create your profile.</p>
+    <button (click)="showRegistrationForm()">Create Profile</button>
+  </div>
