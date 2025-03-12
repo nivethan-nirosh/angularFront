@@ -1,0 +1,83 @@
+<!-- Input Section -->
+<div class="container">
+    <div class="input-section">
+        <h2>Generate Service Letter</h2>
+        <div class="input-group">
+            <input type="number" (ngModel)="id" placeholder="Enter OJT Registration ID" class="form-input">
+            <button class="btn-primary" >Continue</button>
+        </div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Details Display -->
+    <div *ngIf="ojtDetails" class="details-card">
+        <h3>Verification Details</h3>
+        <div class="details-grid">
+            <div class="detail-item">
+                <label>Registration ID:</label>
+                <span>{{ ojtDetails.id }}</span>
+            </div>
+            <div class="detail-item">
+                <label>Full Name:</label>
+                <span>{{ ojtDetails.fullName }}</span>
+            </div>
+            <div class="detail-item">
+                <label>Institute:</label>
+                <span>{{ ojtDetails.institute }}</span>
+            </div>
+            <div class="detail-item">
+                <label>Registration No:</label>
+                <span>{{ ojtDetails.regNo }}</span>
+            </div>
+        </div>
+        <button class="btn-generate" (click)="showLetter = true">Generate Letter</button>
+    </div>
+
+  <!-- Service Letter Preview -->
+<div *ngIf="showLetter" class="letter-preview" id="service-letter-content-full"> 
+  <div id="service-letter-content" class="letter-content">
+    <div class="letter-header">
+      <div class="header-main">
+        <img src="assets/icons/mpmaLogo.png" class="institution-logo" alt="Academy Logo">
+        <div class="header-text">
+          <h1>Mahapola Ports and Maritime Academy</h1>
+          <h2>Sri Lanka Ports Authority</h2>
+        </div>
+      </div>
+      <div class="reference-info">
+        <div class="ref-section">
+          <div class="ref-number">MP/MA/01.63/2024/108</div>
+          <div class="letter-date">Date</div>
+        </div>
+        <div class="recipient-info">
+          <div>UG/2024/33</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="letter-body">
+      <h3 class="salutation">To Whom It May Concern</h3>
+      
+      <div class="content-block">
+        <p>This is to certify that <strong>{{ ojtDetails.fullName }}</strong>, 
+        holder of National ID number {{ ojtDetails.nationalId }}, has undergone 
+        to at the 
+        <strong>{{ ojtDetails.division }}</strong> of Sri Lanka Ports Authority.</p>
+
+        <p>This training has been given as a fulfillment of the industrial training 
+        requirement of <strong>the {{ ojtDetails.degree }} program</strong> 
+        conducted by <strong>{{ ojtDetails.institute }}</strong>.</p>
+      </div>
+
+      <div class="signature-section">
+        <p>Chief Training Manager,</p>
+        <div class="signature-line"></div>
+        <div class="signature-space"></div>
+        <p>Mahapola Ports and Maritime Academy</p>
+        <p>Sri Lanka Ports Authority</p>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="btn-download" >Download PDF</button>
+

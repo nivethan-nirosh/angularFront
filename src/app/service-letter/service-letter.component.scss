@@ -1,0 +1,231 @@
+/* Base Styles */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Input Section */
+  .input-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .form-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background: #0056b3;
+  }
+  
+  .btn-generate {
+    background: #14892f;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    margin-top: 1rem;
+  }
+
+  
+  /* Details Card */
+  .details-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .detail-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .detail-item label {
+    font-weight: 600;
+    color: #444;
+  }
+  
+  /* Letter Preview */
+  .letter-preview {
+    background: white;
+    padding: 2.5rem;
+    margin: 2rem auto;
+    border: 2px solid #1a237e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 210mm; /* Standard A4 width */
+    min-height: 297mm; /* Standard A4 height */
+    position: relative;
+  
+    .letter-content {
+      font-family: 'Times New Roman', serif;
+      line-height: 1.6;
+      font-size: 12pt;
+      color: #333;
+  
+      .letter-header {
+        border-bottom: 2px solid #1a237e;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+  
+        .header-main {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+  
+          .institution-logo {
+            height: 80px;
+            width: auto;
+          }
+  
+          .header-text {
+            h1 {
+              font-size: 18pt;
+              text-align: center;
+              color: #1a237e;
+              margin: 0;
+              font-weight: 700;
+            }
+            
+            h2 {
+              text-align: center;
+              font-size: 16pt;
+              color: #0d47a1;
+              margin: 0.25rem 0 0;
+              font-weight: 600;
+            }
+          }
+        }
+  
+        .reference-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+  
+          .ref-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+  
+            .ref-number {
+              font-weight: 600;
+              color: #444;
+              font-size: 11pt;
+            }
+  
+            .letter-date {
+              font-weight: 600;
+              color: #444;
+              font-size: 11pt;
+            }
+          }
+  
+          .recipient-info {
+            font-weight: 600;
+            font-size: 11pt;
+            text-align: right;
+            margin-top: -0.5rem;
+            color: #444;
+          }
+        }
+      }
+  
+      .letter-body {
+        margin: 0 2rem;
+  
+        .salutation {
+          font-size: 12pt;
+          font-weight: 600;
+          margin: 1.5rem 0;
+          text-decoration: underline;
+        }
+  
+        .content-block {
+          p {
+            margin: 1rem 0;
+            text-align: justify;
+            text-indent: 40px;
+            line-height: 1.8;
+  
+            strong {
+              font-weight: 600;
+              color: #1a237e;
+            }
+          }
+        }
+  
+        .signature-section {
+          margin-top: 8rem;
+          padding-top: 2rem;
+          border-top: 1px solid #ccc;
+  
+          p {
+            margin: 0.25rem 0;
+            font-size: 11pt;
+          }
+  
+          .signature-line {
+            width: 300px;
+            height: 1px;
+            border-bottom: 2px solid #000;
+            margin: 3.5rem 0;
+          }
+  
+          .signature-space {
+            height: 1px; /* Space for physical signature */
+          }
+        }
+      }
+    }
+  }
+  
+  .btn-download {
+    background: #1a237e;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    font-size: 12pt;
+    float: right;
+    transition: background 0.3s;
+  
+    &:hover {
+      background: #0d47a1;
+    }
+  }
